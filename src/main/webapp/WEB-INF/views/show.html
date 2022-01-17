@@ -18,20 +18,20 @@
             <th>name</th>
             <th>contactNumber</th>
             <th>img</th>
+            <th>category</th>
             <th>delete</th>
             <th>edit</th>
-            <th>view</th>
         </tr>
         </thead>
         <tbody>
-        <tr class="table-danger" th:each="employee : ${employee}">
-            <td th:text="*{employee.getId()}"></td>
-            <td th:text="*{employee.getName()}"></td>
-            <td th:text="*{employee.getContactNumber()}"></td>
-            <td><img th:src="*{employee.getImg()}"></td>
-            <td><a th:href="@{/delete(id = ${employee.id})}">delete</a></td>
-            <td><a th:href="@{/edit(id = ${employee.id})}">edit</a></td>
-            <td><a th:href="@{/view(id = ${employee.id})}">view</a></td>
+        <tr class="table-danger" th:each="employee : ${employees}">
+            <td th:text="${employee.id}"></td>
+            <td th:text="${employee.name}"></td>
+            <td th:text="${employee.contactNumber}"></td>
+            <td><img th:src="${employee.img}"></td>
+            <td th:text="${employee.category.name}"></td>
+            <td><a th:href="@{/delete(id = ${employee.getId()})}">delete</a></td>
+            <td><a th:href="@{/edit(id = ${employee.getId()})}">edit</a></td>
         </tr>
         </tbody>
     </table>

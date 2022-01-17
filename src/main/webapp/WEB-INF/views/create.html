@@ -18,6 +18,7 @@
             <th>name</th>
             <th>contactNumber</th>
             <th>img</th>
+            <th>category</th>
             <th>action</th>
         </tr>
         </thead>
@@ -27,6 +28,11 @@
             <td><input name="name"></td>
             <td><input name="contactNumber"></td>
             <td><input type="file" name="upImg"></td>
+            <td>
+            <select name="idCategory">
+                <option th:each="category : ${category}" th:value="${category.id}" th:text="${category.name}"></option>
+            </select>
+            </td>
             <td><button type="submit" class="btn btn-outline-success">create</button></td>
         </tr>
         </tbody>
